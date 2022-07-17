@@ -16,10 +16,17 @@ class ByeWorld extends HTMLElement {
             <h1>bye World!</h1>
         `;
     }
+	tag = 'bye-world'
+
+	say(something) {
+		console.log(`nnkj, I want to say ${this.tag} ${something}`)
+	}
+
 }
 
 // 挂载
 window.customElements.define('bye-world', ByeWorld)
+
 </script>
 
 <html>
