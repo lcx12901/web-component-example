@@ -4,5 +4,8 @@
   "description": "learn web component",
   "main": "index.html",
   "author": "lincx",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build": ""
+  }
 }
