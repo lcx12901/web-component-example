@@ -1,0 +1,29 @@
+<script>
+// 假如我已经构建好一个 Web Components 组件 <bye-world>并导出
+
+class ByeWorld extends HTMLElement {
+    constructor() {
+        super();
+        this.attachShadow({ mode: 'open' });
+        this.shadowRoot.innerHTML = `
+           <style>
+                :host {
+                    display: block;
+                    padding: 10px;
+                    background-color: #eee;
+                }
+            </style>
+            <h1>bye World!</h1>
+        `;
+    }
+}
+
+// 挂载
+window.customElements.define('bye-world', ByeWorld)
+</script>
+
+<html>
+	<body>
+		<bye-world></bye-world>
+	</body>
+</html>
