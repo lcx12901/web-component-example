@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Components</title>
+    <style>
+        h1 {
+            font-size: 20px;
+            color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+<div></div>
+<bye-world></bye-world>
+
+<template id="nnkj">
+    <style>
+        .box {
+            padding: 20px;
+        }
+
+        .box > .first {
+            font-size: 24px;
+            color: red;
+        }
+
+        .box > .second {
+            font-size: 14px;
+            color: #000;
+        }
+
+    </style>
+
+
+    <div class="box">
+        <p class="first">Bye</p>
+        <p class="second">World</p>
+    </div>
+</template>
+
+<script type="module">
+    class ByeWorld extends HTMLElement {
+        constructor() {
+            super();
+            const root = this.attachShadow({ mode: 'open' });
+            root.appendChild(document.getElementById('nnkj').content.cloneNode(true));
+        }
+    }
+    window.customElements.define('bye-world', ByeWorld);
+</script>
+</body>
+
+</html>
